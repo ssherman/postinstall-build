@@ -117,7 +117,7 @@ function postinstallBuild () {
   // Some packages (e.g. `ember-cli`) install their own version of npm, which
   // can shadow the expected version and break the package trying to use
   // `postinstall-build`.
-  var npm = 'npm'
+  var npm = 'yarn'
   var execPath = process.env.npm_execpath
   var userAgent = process.env.npm_config_user_agent || ''
   var npmVersion = (userAgent.match(/^npm\/([^\s]+)/) || [])[1]
