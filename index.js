@@ -241,15 +241,15 @@ function postinstallBuild () {
   }
 
   var warnUserAgent = function () {
-    if (npmVersion && !/^(3\.|4\.0\.)/.test(npmVersion)) {
-      log.warn(
-        'postinstall-build:\n  This version of npm (' + npmVersion + ') may ' +
-        'not be compatible with postinstall-build! There\n  are outstanding ' +
-        'bugs in certain versions of npm that prevent it from working with\n  ' +
-        'postinstall-build. See https://github.com/exogen/postinstall-build#bugs-in-npm\n  ' +
-        'for more information.\n'
-      )
-    }
+    // if (npmVersion && !/^(3\.|4\.0\.)/.test(npmVersion)) {
+    //   log.warn(
+    //     'postinstall-build:\n  This version of npm (' + npmVersion + ') may ' +
+    //     'not be compatible with postinstall-build! There\n  are outstanding ' +
+    //     'bugs in certain versions of npm that prevent it from working with\n  ' +
+    //     'postinstall-build. See https://github.com/exogen/postinstall-build#bugs-in-npm\n  ' +
+    //     'for more information.\n'
+    //   )
+    // }
   }
 
   var checkBuildArtifact = function (callback) {
@@ -275,10 +275,10 @@ function postinstallBuild () {
     // don't know what version `postinstall-build` will actually run, since the
     // `$npm_config_user_agent` string didn't tell us, so run `npm --version` to
     // find out.
-    if (npmVersion) {
-      warnUserAgent()
-      return callback(null, npmVersion)
-    }
+    // if (npmVersion) {
+    //   warnUserAgent()
+    //   return callback(null, npmVersion)
+    // }
     var output = ''
     var command = npm + ' --version'
     log.info('postinstall-build:\n  ' + command + '\n')
